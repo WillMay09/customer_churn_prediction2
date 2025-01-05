@@ -9,7 +9,7 @@ import {
 } from "react";
 
 import React, { useState, useEffect } from "react";
-interface Customer {
+export interface Customer {
   CustomerId: number;
   Surname: string;
   CreditScore: number;
@@ -67,16 +67,16 @@ export default function Home() {
           <p>Loading...</p>
         ) : customerData?.length ? (
           customerData.map((customer) => (
-            <Link href={`/customerList/${customer.CustomerId}`}>
-              <div
-                key={customer.CustomerId}
-                className="bg-blue-100 border border-blue-500 rounded-lg p-4 text-center hover:bg-blue-800 text-blue-700 hover:text-white"
-              >
+            <div
+              key={customer.CustomerId}
+              className="bg-blue-100 border border-blue-500 rounded-lg p-4 text-center hover:bg-blue-800 text-blue-700 hover:text-white"
+            >
+              <Link href={`/customerList/${customer.CustomerId}`}>
                 <ul>
                   <li className="font-medium">{customer.Surname}</li>
                 </ul>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))
         ) : (
           <p>No customer data found.</p>

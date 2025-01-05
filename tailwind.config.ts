@@ -11,6 +11,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customDarkBlue: "#16113A",
+        customHighlightBlue:"#36385F",
+        customBorder: "#6E5B57"
+
       },
     },
   },
